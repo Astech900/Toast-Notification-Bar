@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.buttons {
+    margin: 50px;
+    padding: 1rem;
+
+}
+
+.buttons button {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #333;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(1):hover {
+    background-color: green;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.buttons button:nth-child(2):hover {
+    background-color: red;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.buttons button:nth-child(3):hover {
+    background-color: orange;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+
+#toast-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+
+    padding: 1rem;
+    overflow: hidden;
+
+}
+
+.toast {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    margin: 30px 5px;
+
+    width: 25rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform: translateX(100%);
+    animation: movelft 0.5s linear forwards;
+}
+
+@keyframes movelft {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.toast::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+.toast i {
+    margin: 0 20px;
+    color: green;
+    font-size: 1.5rem;
+}
+
+.toast.error-style i {
+    color: red;
+
+}
+
+.toast.invalid-style i {
+    color: orange;
+
+}
+
+.toast.error::after {
+
+    background: red;
+}
+
+.toast.invalid::after {
+
+    background: orange;
+
+}
